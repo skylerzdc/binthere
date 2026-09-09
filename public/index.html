@@ -8,6 +8,7 @@
         <meta name="color-scheme" content="dark light" />
         <!-- Kept in sync with the class-based theme by theme-init.js / theme.js. -->
         <meta name="theme-color" content="#0d1117" />
+        <!-- from b-appinn-net: -->
         <title>binthere · 临时分享密码和文本</title>
         <meta
             name="description"
@@ -17,7 +18,9 @@
        to servers, so a shared paste link only ever exposes this generic card. -->
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="binthere" />
+        <!-- from b-appinn-net: -->
         <meta property="og:title" content="binthere · 临时分享密码和文本" />
+        <!-- from b-appinn-net: -->
         <meta
             property="og:description"
             content="临时分享密码、API 密钥和其他文本。仅可读取一次，未读取的内容最多保留 24 小时。"
@@ -50,6 +53,7 @@
         <!-- Slim announcement bar. Hidden by default so returning/dismissed
        visitors never see a flash; announce.js reveals it only when the
        dismissal flag is absent (mirrors theme-init's localStorage pattern). -->
+        <!-- EN-only (no appinn match): Announcement → 公告 -->
         <aside class="announce" id="announce" aria-label="公告" hidden>
             <a
                 class="announce-link"
@@ -57,12 +61,15 @@
                 rel="noopener"
                 target="_blank"
             >
+                <!-- EN-only (no appinn match): New → 新 -->
                 <span class="announce-tag">新</span>
+                <!-- EN-only (no appinn match): Why I don't trust pastebins either → 为什么我也不信任在线便笺服务 -->
                 <span class="announce-txt"
-                    >为什么我同样不信任便签工具</span
+                    >为什么我也不信任在线便笺服务</span
                 >
                 <span class="announce-arrow" aria-hidden="true">→</span>
             </a>
+            <!-- EN-only (no appinn match): Dismiss announcement → 关闭公告 -->
             <button
                 type="button"
                 class="announce-close"
@@ -94,7 +101,8 @@
             </g>
         </svg>
         <header class="topbar reveal">
-            <a class="brand" href="/" id="brand" aria-label="binthere — 主页">
+            <!-- from b-appinn-net: binthere — 首页 -->
+            <a class="brand" href="/" id="brand" aria-label="binthere — 首页">
                 <span class="wm-a">bin</span><span class="wm-b">there</span>
             </a>
             <div class="topbar-right">
@@ -106,7 +114,8 @@
                     href="https://github.com/nxfu/binthere"
                     rel="noopener"
                     target="_blank"
-                    aria-label="binthere 在 GitHub 上"
+                    <!-- from b-appinn-net: binthere 的 GitHub 项目 -->
+                    aria-label="binthere 的 GitHub 项目"
                 >
                     <!-- Octicons "mark-github" (MIT). -->
                     <svg class="gh-mark" viewBox="0 0 16 16" aria-hidden="true">
@@ -127,14 +136,16 @@
                         <span class="gh-count mono" id="gh-count"></span>
                     </span>
                 </a>
+                <!-- from b-appinn-net: 新建便笺 -->
                 <a class="back" id="newlink" href="/" hidden
-                    ><span class="arrow">＋</span><span>新建便签</span></a
+                    ><span class="arrow">＋</span><span>新建便笺</span></a
                 >
+                <!-- from b-appinn-net: 切换浅色或深色主题 -->
                 <button
                     type="button"
                     id="themeToggle"
                     class="theme-toggle"
-                    aria-label="切换明暗主题"
+                    aria-label="切换浅色或深色主题"
                     aria-pressed="true"
                 >
                     <svg
@@ -172,24 +183,29 @@
             <!-- ── CREATE ─────────────────────────────────────────────────────────── -->
             <section id="view-create" tabindex="-1" hidden>
                 <div class="head reveal d1">
+                    <!-- from b-appinn-net: 临时分享，轻松一点 -->
                     <p class="eyebrow">临时分享，轻松一点</p>
+                    <!-- from b-appinn-net: 打开一次，就没了。 -->
                     <h1 class="title">打开一次，<span class="title-em">就没了。</span></h1>
+                    <!-- from b-appinn-net: 适合临时分享密码、API 密钥等内容。确认读取后，链接即失效。 -->
                     <p class="subtitle">
                         适合临时分享密码、API 密钥等内容。确认读取后，链接即失效。
                     </p>
                 </div>
 
                 <div class="editor-box reveal d2" id="editor-box">
+                    <!-- from b-appinn-net: placeholder + aria-label -->
                     <textarea
                         id="editor"
                         class="editor"
                         placeholder="在此输入或粘贴内容…将生成的完整链接发给对方即可。"
-                        aria-label="便签内容"
+                        aria-label="便笺内容"
                         spellcheck="false"
                     ></textarea>
 
                     <div class="editor-bar">
                         <div class="editor-bar-left">
+                            <!-- from b-appinn-net: aria-label="启用密码保护" + text="密码" -->
                             <button
                                 type="button"
                                 class="lock"
@@ -234,11 +250,12 @@
                                 <span class="lock-txt">密码</span>
                             </button>
                         </div>
+                        <!-- from b-appinn-net: aria-label="生成分享链接" + text="生成链接" -->
                         <button
                             type="button"
                             id="create"
                             class="send"
-                            aria-label="加密并生成链接"
+                            aria-label="生成分享链接"
                         >
                             <span class="send-txt">生成链接</span>
                             <svg
@@ -259,18 +276,20 @@
                     </div>
                 </div>
 
+                <!-- from b-appinn-net: aria-label="便笺的使用方式" -->
                 <div
                     class="features reveal d3"
                     role="list"
-                    aria-label="binthere 如何保护你的便签"
+                    aria-label="便笺的使用方式"
                 >
-                    <span class="feat" role="listitem">私密</span>
+                    <!-- from b-appinn-net: 无需注册 / 浏览器本地处理 / 仅可读取一次 / 未读内容保留 24 小时 -->
+                    <span class="feat" role="listitem">无需注册</span>
                     <span class="feat" role="listitem"
-                        >端到端加密</span
+                        >浏览器本地处理</span
                     >
-                    <span class="feat" role="listitem">一次性阅读</span>
+                    <span class="feat" role="listitem">仅可读取一次</span>
                     <span class="feat" role="listitem"
-                        >24 小时后自动删除</span
+                        >未读内容保留 24 小时</span
                     >
                 </div>
 
@@ -287,18 +306,21 @@
                     tabindex="-1"
                     id="pw-modal-dialog"
                 >
+                    <!-- from b-appinn-net: 设置便笺密码 -->
                     <h2 class="modal-title" id="pw-modal-title">
-                        设置密码
+                        设置便笺密码
                     </h2>
+                    <!-- from b-appinn-net: 接收者需要输入此密码才能查看便笺。 -->
                     <p class="modal-sub">
-                        解锁这个便签时需要输入此密码。
+                        接收者需要输入此密码才能查看便笺。
                     </p>
+                    <!-- from b-appinn-net: placeholder + aria-label="密码" + 显示密码 -->
                     <div class="pw modal-pw">
                         <input
                             type="password"
                             id="modal-password"
                             class="input"
-                            placeholder="输入密码"
+                            placeholder="请输入密码"
                             autocomplete="off"
                             data-bwignore
                             data-lpignore="true"
@@ -348,18 +370,19 @@
                     </div>
                     <!-- A typo'd password permanently locks a one-time note, so the
                          creator must type it twice. Paste is allowed in both fields. -->
+                    <!-- from b-appinn-net: placeholder + aria-label="确认密码" + 显示密码 -->
                     <div class="pw modal-pw">
                         <input
                             type="password"
                             id="modal-password-confirm"
                             class="input"
-                            placeholder="再次输入密码"
+                            placeholder="请再次输入密码"
                             autocomplete="off"
                             data-bwignore
                             data-lpignore="true"
                             data-1p-ignore
                             data-form-type="other"
-                            aria-label="再次输入密码"
+                            aria-label="确认密码"
                         />
                         <button
                             type="button"
@@ -403,6 +426,7 @@
                     </div>
                     <p class="msg error modal-msg" id="pw-modal-msg" role="alert" hidden></p>
                     <div class="modal-actions">
+                        <!-- from b-appinn-net: 取消 -->
                         <button
                             type="button"
                             class="btn modal-btn"
@@ -410,6 +434,7 @@
                         >
                             取消
                         </button>
+                        <!-- from b-appinn-net: text="创建" -->
                         <button type="button" class="send" id="pw-create">
                             <span class="send-txt">创建</span>
                             <svg
@@ -434,10 +459,13 @@
             <!-- ── SUCCESS ────────────────────────────────────────────────────────── -->
             <section id="view-success" tabindex="-1" hidden>
                 <div class="head reveal d1">
-                    <p class="eyebrow">已封存</p>
+                    <!-- from b-appinn-net: 链接已生成 -->
+                    <p class="eyebrow">链接已生成</p>
+                    <!-- from b-appinn-net: 分享你的链接 -->
                     <h1 class="title">分享你的链接</h1>
+                    <!-- from b-appinn-net: 将完整链接发给对方。确认读取后，链接即失效，内容不再保留。 -->
                     <p class="subtitle" id="success-note">
-                        只把它发给那个应该读的人——一旦打开便签就会自动销毁。解锁密钥就藏在链接本身里,所以请妥善保管整个链接,千万不要再把它发回给我们。
+                        将完整链接发给对方。确认读取后，链接即失效，内容不再保留。
                     </p>
                 </div>
                 <div class="stack reveal d2">
@@ -463,31 +491,37 @@
                                     <circle cx="32" cy="32" r="4.2" pathLength="1" />
                                 </g>
                             </svg>
+                            <!-- from b-appinn-net: 扫码打开 · 仅可读取一次 -->
                             <span class="seal-label mono"
-                                >扫码打开 · 仅可阅读一次</span
+                                >扫码打开 · 仅可读取一次</span
                             >
                         </div>
                         <div class="card qr">
-                            <img id="qr" alt="便签链接的二维码" />
+                            <!-- from b-appinn-net: 便笺链接二维码 -->
+                            <img id="qr" alt="便笺链接二维码" />
                         </div>
                     </div>
                     <div class="linkrow">
                         <div class="url mono" id="paste-url"></div>
+                        <!-- from b-appinn-net: 复制链接 -->
                         <button type="button" class="copy-btn" id="copy-url">
                             复制链接
                         </button>
                     </div>
                     <div class="btn-row">
+                        <!-- from b-appinn-net: 打开链接 -->
                         <button type="button" class="btn" id="open-link">
                             打开链接
                         </button>
-                        <a class="btn" href="/" id="another">再创建一个</a>
+                        <!-- from b-appinn-net: 再建一条 -->
+                        <a class="btn" href="/" id="another">再建一条</a>
+                        <!-- from b-appinn-net: 立即移除 -->
                         <button
                             type="button"
                             class="btn danger btn-end"
                             id="delete-btn"
                         >
-                            立即删除
+                            立即移除
                         </button>
                     </div>
                     <p class="msg" id="success-msg" role="status" hidden></p>
@@ -497,19 +531,23 @@
             <!-- ── PASSWORD PROMPT ────────────────────────────────────────────────── -->
             <section id="view-password" tabindex="-1" hidden>
                 <div class="head reveal d1">
-                    <p class="eyebrow">已加密</p>
+                    <!-- from b-appinn-net: 密码保护 -->
+                    <p class="eyebrow">密码保护</p>
+                    <!-- from b-appinn-net: 输入密码 -->
                     <h1 class="title">输入密码</h1>
+                    <!-- from b-appinn-net: 这条便笺设有密码，请向发送者索取后输入。 -->
                     <p class="subtitle" id="password-subtitle">
-                        这个便签设有密码。请向发送者索取密码,然后输入以打开便签。
+                        这条便笺设有密码，请向发送者索取后输入。
                     </p>
                 </div>
                 <div class="stack reveal d2">
+                    <!-- from b-appinn-net: placeholder + aria-label="密码" + 显示密码 -->
                     <div class="pw pw-wide">
                         <input
                             type="password"
                             id="decrypt-password"
                             class="input"
-                            placeholder="输入密码"
+                            placeholder="请输入密码"
                             autocomplete="off"
                             data-bwignore
                             data-lpignore="true"
@@ -557,6 +595,7 @@
                             </svg>
                         </button>
                     </div>
+                    <!-- EN-only (no appinn match): Decrypt → 解密 -->
                     <button type="button" class="cta" id="decrypt-btn">
                         解密
                     </button>
@@ -568,6 +607,7 @@
             <section id="view-paste" tabindex="-1" hidden>
                 <div class="pills reveal d1" id="paste-pills"></div>
                 <div class="content reveal d2" id="paste-content"></div>
+                <!-- from b-appinn-net: 复制文本 + 原文 -->
                 <div class="btn-row reveal d3 mt1">
                     <button
                         type="button"
@@ -607,10 +647,12 @@
                         />
                         <circle cx="12" cy="17.6" r="1" fill="currentColor" />
                     </svg>
-                    <p class="msg" id="status-msg" role="status">加载中…</p>
+                    <!-- from b-appinn-net: 正在加载… -->
+                    <p class="msg" id="status-msg" role="status">正在加载…</p>
                     <div class="btn-row center" id="status-actions" hidden>
+                        <!-- EN-only (no appinn match): Reveal note → 查看便笺 -->
                         <button type="button" class="cta" id="reveal-burn">
-                            显示便签
+                            查看便笺
                         </button>
                     </div>
                     <p
@@ -620,47 +662,51 @@
                         aria-live="off"
                         hidden
                     >
+                        <!-- from b-appinn-net: 剩余有效时间 (对应的英文原 Deletes in → EN 结构略不同, 已在 EN 原文中是 'Deletes in [clock]') -->
                         <span class="status-timer-label"
-                            >将于</span
+                            >剩余有效时间</span
                         >
                         <span
                             class="status-timer-clock"
                             id="status-timer-clock"
                             >--:--:--</span
                         >
-                        <span class="status-timer-label"
-                            >后删除</span
-                        >
                     </p>
                     <div class="btn-row center" id="status-new" hidden>
+                        <!-- from b-appinn-net: 新建便笺 -->
                         <a class="cta cta-inline" href="/" id="status-new-link"
-                            >创建新便签</a
+                            >新建便笺</a
                         >
                     </div>
                 </div>
             </section>
 
             <footer class="foot reveal d4">
-                <p class="foot-crypto mono" aria-label="加密方案">
-                    AES-256-GCM · HKDF-SHA256 · 密钥保存在 URL
-                    <span class="foot-frag">#片段</span>中
+                <!-- from b-appinn-net: 技术信息 (但内容更详细) -->
+                <p class="foot-crypto mono" aria-label="加密技术">
+                    AES-256-GCM · HKDF-SHA256 · 链接需包含完整的
+                    <span class="foot-frag">#fragment</span>
                 </p>
                 <p class="foot-links" id="foot-links">
+                    <!-- from b-appinn-net: 源代码 -->
                     <a
                         href="https://github.com/nxfu/binthere"
                         rel="noopener"
                         target="_blank"
                         >源代码</a
                     >
+                    <!-- from b-appinn-net: 工作原理 (EN: Threat Model → 已转译为工作原理) -->
                     <a
                         href="https://github.com/nxfu/binthere/blob/main/SECURITY.md"
                         rel="noopener"
                         target="_blank"
-                        >威胁模型</a
+                        >工作原理</a
                     >
+                    <!-- from b-appinn-net: 问题反馈 (EN: Security) -->
                     <a href="/.well-known/security.txt" rel="noopener"
-                        >安全</a
+                        >问题反馈</a
                     >
+                    <!-- from b-appinn-net: 开发者 -->
                     <a href="https://gaury.dev" rel="noopener"
                         >开发者</a
                     >
