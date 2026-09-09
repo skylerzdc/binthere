@@ -8,19 +8,19 @@
         <meta name="color-scheme" content="dark light" />
         <!-- Kept in sync with the class-based theme by theme-init.js / theme.js. -->
         <meta name="theme-color" content="#0d1117" />
-        <title>binthere · 零知识便签</title>
+        <title>binthere · 临时分享密码和文本</title>
         <meta
             name="description"
-            content="加密的零知识便签工具。你的文本在浏览器中加密,服务器永远看不到。"
+            content="临时分享密码、API 密钥和其他文本。仅可读取一次，未读取的内容最多保留 24 小时。"
         />
         <!-- Link previews (chat apps / social scrapers). Fragment keys are never sent
        to servers, so a shared paste link only ever exposes this generic card. -->
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="binthere" />
-        <meta property="og:title" content="binthere · 零知识便签" />
+        <meta property="og:title" content="binthere · 临时分享密码和文本" />
         <meta
             property="og:description"
-            content="加密的零知识便签工具。你的文本在浏览器中加密,服务器永远看不到。"
+            content="临时分享密码、API 密钥和其他文本。仅可读取一次，未读取的内容最多保留 24 小时。"
         />
         <meta property="og:url" content="https://binthere.gaury.dev/" />
         <meta property="og:image" content="https://binthere.gaury.dev/opengraph.png" />
@@ -172,10 +172,10 @@
             <!-- ── CREATE ─────────────────────────────────────────────────────────── -->
             <section id="view-create" tabindex="-1" hidden>
                 <div class="head reveal d1">
-                    <p class="eyebrow">默认私密</p>
-                    <h1 class="title">说一次,即<span class="title-em">封存。</span></h1>
+                    <p class="eyebrow">临时分享，轻松一点</p>
+                    <h1 class="title">打开一次，<span class="title-em">就没了。</span></h1>
                     <p class="subtitle">
-                        便签只属于你。仅可阅读一次,阅后即焚。
+                        适合临时分享密码、API 密钥等内容。确认读取后，链接即失效。
                     </p>
                 </div>
 
@@ -183,7 +183,7 @@
                     <textarea
                         id="editor"
                         class="editor"
-                        placeholder="写下或粘贴你的便签……只有拿到链接的人才能解密。"
+                        placeholder="在此输入或粘贴内容…将生成的完整链接发给对方即可。"
                         aria-label="便签内容"
                         spellcheck="false"
                     ></textarea>
@@ -195,7 +195,7 @@
                                 class="lock"
                                 id="lock"
                                 aria-pressed="false"
-                                aria-label="使用密码保护"
+                                aria-label="启用密码保护"
                             >
                                 <svg
                                     class="lock-ico"
